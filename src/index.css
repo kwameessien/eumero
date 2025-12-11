@@ -20,20 +20,32 @@
 .marquee-text {
   display: inline-block;
   text-transform: uppercase;
-  font-size: 0.875rem;
-  letter-spacing: 0.05em;
+  font-size: 0.875rem; /* 14px (0.875 × 16px) */
+  letter-spacing: 0.05em; /* 0.8px (0.05 × 16px) */
   white-space: nowrap;
 }
 
 .logo-text {
   font-family: 'Arapey', serif;
-  font-size: 2.25rem;
+  font-size: 2.25rem; /* 36px (2.25 × 16px) */
   font-weight: 400;
   color: black;
 }
 
 .nav-text {
   font-family: 'Inria Sans', sans-serif;
-  font-size: 0.875rem;
+  font-size: 0.875rem; /* 14px (0.875 × 16px) */
   color: rgb(75, 85, 99);
+}
+
+.product-grid-text {
+  font-family: 'Inria Sans', sans-serif;
+  color: black;
+  font-size: 0.875rem; /* 14px (0.875 × 16px) */
+}
+
+.footer-text {
+  font-family: 'Inria Sans', sans-serif;
+  color: rgb(75, 85, 99);
+  font-size: 0.875rem; /* 14px (0.875 × 16px) */  
 }

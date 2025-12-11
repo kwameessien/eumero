@@ -1,15 +1,9 @@
-import Marquee from './homepage/Marquee'
-import Nav from './homepage/Nav'
-import MainPoster from './homepage/MainPoster'
+import Homepage from './homepage/Homepage'
 
 function App() {
 
   return (
-    <>
-      <Marquee />
-      <Nav />
-      <MainPoster />
-    </>
+    <Homepage />
   )
 }
 
