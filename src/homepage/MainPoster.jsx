@@ -6,7 +6,7 @@ function MainPoster({ imageSrc, alt = "Byredo" }) {
       <img 
         src={imageSrc || byredoImage} 
         alt={alt}
-        className="w-full h-auto object-cover"
+        className="w-full h-[700px] object-cover"
       />
     </div>
   );
