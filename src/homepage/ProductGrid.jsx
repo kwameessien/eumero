@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import byredo1 from '../assets/byredo 1.png'
 import byredo2 from '../assets/byredo 2.png'
 import byredo3 from '../assets/byredo 3.png'
@@ -12,22 +13,27 @@ const products = [
 
 function ProductGrid() {
   return (
-    <div className="w-full px-12 py-6 mt-20">
+    <div className="w-full px-12 pb-6 mt-20">
       <div className="flex flex-row justify-center items-end gap-40">
         {products.map((product) => (
-          <div key={product.id} className="flex flex-col items-center justify-end">
-            <div className="mb-4 flex items-end" style={{ height: '200px' }}>
+          <Link 
+            key={product.id} 
+            to={`/product/${product.id}`}
+            className="product-card flex flex-col items-center justify-end cursor-pointer"
+          >
+            <div className="mb-4 flex items-end product-image-wrapper" style={{ height: '300px' }}>
+              <div className="liquid-overlay"></div>
               <img 
                 src={product.image} 
                 alt={product.name}
-                className="max-h-full max-w-[120px] h-auto object-contain"
+                className="product-image max-h-full max-w-[2000px] h-auto object-contain"
               />
             </div>
             <div className="text-center">
               <p className="product-grid-text mb-0.5">{product.name}</p>
               <p className="product-grid-text">{product.price}</p>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

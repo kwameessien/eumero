@@ -9,9 +9,15 @@ function Homepage() {
     <>
       <Marquee />
       <Nav />
-      <MainPoster />
-      <ProductGrid />
-      <Footer />
+      <div className="min-h-screen flex flex-col">
+        <div className="flex-grow">
+          <MainPoster />
+          <ProductGrid />
+        </div>
+        <div className="mt-auto">
+          <Footer />
+        </div>
+      </div>
     </>
   );
 }
