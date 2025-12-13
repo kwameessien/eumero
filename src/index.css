@@ -54,6 +54,56 @@ body {
   font-size: 0.875rem; /* 14px (0.875 × 16px) */  
 }
 
+.shop-heading {
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 2.25rem; /* 36px (2.25 × 16px) */
+}
+
+.product-title {
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 1.5rem; /* 24px (1.5 × 16px) */
+  font-weight: 700;
+  color: black;
+  text-transform: uppercase;
+}
+
+.product-description {
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 0.875rem; /* 14px (0.875 × 16px) */
+  color: black;
+  line-height: 1.6;
+}
+
+.product-price {
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 3rem; /* 48px (3 × 16px) */
+  font-weight: 700;
+  color: black;
+}
+
+.add-to-cart-btn {
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 0.875rem; /* 14px (0.875 × 16px) */
+  background-color: #AAA397;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #9a9587;
+}
+
+.product-detail-image {
+  max-height: 400px;
+  width: 100%;
+  object-fit: contain;
+}
+
 /* Liquid distortion effect for product cards */
 .product-card {
   position: relative;
