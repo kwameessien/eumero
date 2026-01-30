@@ -8,8 +8,8 @@ function Nav() {
       </Link>
       <div className="flex items-center gap-8">
         <Link to="/shop" className="nav-text hover:text-black transition-colors">shop</Link>
-        <a href="#" className="nav-text hover:text-black transition-colors">search</a>
-        <a href="#" className="nav-text hover:text-black transition-colors">usd</a>
+        <a href="#" className="nav-text hover:text-black transition-colors">rituals</a>
+        <a href="#" className="nav-text hover:text-black transition-colors">about</a>
         <a href="#" className="nav-text hover:text-black transition-colors">cart</a>
       </div>
     </nav>
