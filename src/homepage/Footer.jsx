@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 function Footer() {
   return (
     <footer className="w-full px-6 py-8">
+      <div className="w-full border-t border-black/10 mb-6" />
       <div className="flex flex-wrap justify-between items-center w-full">
         <a href="#" className="footer-text hover:text-black transition-colors">Newsletter</a>
         <Link to="/shop" className="footer-text hover:text-black transition-colors">Shop</Link>
