@@ -12,8 +12,10 @@ function Marquee({ text = 'BIRTHDAY SALE 30% OFF SITEWIDE WITH CODE LUCKY3' }: M
   return (
     <div className="fixed left-0 right-0 top-0 z-50 w-full overflow-hidden whitespace-nowrap bg-[#231D18] py-3 text-white">
       <div className="inline-flex w-max animate-marquee">
-        <div className="inline-flex gap-16">{items}</div>
-        <div className="inline-flex gap-16">{items}</div>
+        <div className="inline-flex shrink-0 gap-16">{items}</div>
+        <div className="inline-flex shrink-0 gap-16" aria-hidden="true">
+          {items}
+        </div>
       </div>
     </div>
   )
