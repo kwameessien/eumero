@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 function Nav() {
   return (
-    <nav className="mt-11 flex w-full items-center justify-between px-4 py-4">
+    <nav className="mt-8 flex w-full items-center justify-between px-4 pb-1 pt-2">
       <Link href="/" className="nav-logo text-black">
         EUMERO.
       </Link>
