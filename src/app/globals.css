@@ -10,3 +10,17 @@ body {
   margin: 0;
   background-color: white;
 }
+
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marqueeScroll 30s linear infinite;
+  will-change: transform;
+}
