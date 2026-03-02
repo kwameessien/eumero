@@ -4,7 +4,7 @@ type MarqueeProps = {
 
 function Marquee({ text = 'BIRTHDAY SALE 30% OFF SITEWIDE WITH CODE LUCKY3' }: MarqueeProps) {
   const items = Array.from({ length: 4 }, (_, index) => (
-    <span key={index} className="font-inria text-sm uppercase tracking-[0.05em]">
+    <span key={index} className="marquee-text">
       {text}
     </span>
   ))

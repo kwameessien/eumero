@@ -11,6 +11,80 @@ body {
   background-color: white;
 }
 
+/* Typography utilities */
+.marquee-text {
+  font-family: var(--font-inria), system-ui, sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.nav-logo {
+  font-family: var(--font-arapey), serif;
+  font-size: 2.75rem;
+  font-weight: 400;
+}
+
+.nav-link {
+  font-family: var(--font-inria), system-ui, sans-serif;
+  font-size: 0.875rem;
+}
+
+.footer-link {
+  font-family: var(--font-inria), system-ui, sans-serif;
+  font-size: 0.875rem;
+}
+
+.product-name {
+  font-family: var(--font-inria), system-ui, sans-serif;
+  font-size: 0.875rem;
+}
+
+.product-price {
+  font-family: var(--font-inria), system-ui, sans-serif;
+  font-size: 0.875rem;
+}
+
+.shop-title {
+  font-family: var(--font-inria), system-ui, sans-serif;
+  font-size: 2.25rem;
+}
+
+.product-title {
+  font-family: var(--font-inria), system-ui, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.product-description {
+  font-family: var(--font-inria), system-ui, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.625;
+}
+
+.product-price-lg {
+  font-family: var(--font-inria), system-ui, sans-serif;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.product-cta {
+  font-family: var(--font-inria), system-ui, sans-serif;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.contact-title {
+  font-family: var(--font-arapey), serif;
+  font-size: 2.25rem;
+}
+
+.contact-body {
+  font-family: var(--font-inria), system-ui, sans-serif;
+  font-size: 0.875rem;
+}
+
 @keyframes marqueeScroll {
   0% {
     transform: translateX(0);

@@ -20,8 +20,8 @@ function ProductGrid() {
               />
             </div>
             <div className="text-center">
-              <p className="font-inria text-sm text-black">{product.name}</p>
-              <p className="font-inria text-sm text-black">{product.price}</p>
+              <p className="product-name text-black">{product.name}</p>
+              <p className="product-price text-black">{product.price}</p>
             </div>
           </Link>
         ))}

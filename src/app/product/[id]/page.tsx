@@ -21,7 +21,7 @@ export default function ProductPage({ params }: ProductPageProps) {
         <div className="flex min-h-screen flex-col">
           <div className="mt-12 flex-grow px-12 py-12">
             <div className="mx-auto max-w-4xl text-center">
-              <p className="font-inria text-sm text-black">Product not found</p>
+              <p className="product-description text-black">Product not found</p>
             </div>
           </div>
           <div className="mt-auto">
@@ -45,10 +45,10 @@ export default function ProductPage({ params }: ProductPageProps) {
               </div>
 
               <div className="flex flex-col">
-                <h1 className="mb-6 font-inria text-2xl font-bold uppercase text-black">{product.name}</h1>
-                <p className="mb-8 font-inria text-sm leading-relaxed text-black">{product.description}</p>
-                <p className="mb-8 font-inria text-4xl font-bold text-black">{product.price}</p>
-                <button className="rounded-lg bg-[#AAA397] px-8 py-4 font-inria text-sm uppercase text-white transition-colors hover:bg-[#9a9587]">
+                <h1 className="product-title mb-6 text-black">{product.name}</h1>
+                <p className="product-description mb-8 text-black">{product.description}</p>
+                <p className="product-price-lg mb-8 text-black">{product.price}</p>
+                <button className="product-cta rounded-lg bg-[#AAA397] px-8 py-4 text-white transition-colors hover:bg-[#9a9587]">
                   ADD TO CART
                 </button>
               </div>

@@ -11,7 +11,7 @@ export default function ShopPage() {
       <Nav />
       <div className="flex min-h-screen flex-col">
         <div className="mt-0 flex flex-grow flex-col">
-          <h1 className="mb-5 text-center font-inria text-4xl">Shop All Products</h1>
+          <h1 className="shop-title mb-5 text-center">Shop All Products</h1>
           <div className="mt-12 w-full px-12 pb-6">
             <div className="mx-auto grid max-w-5xl grid-cols-2 gap-16">
               {products.map((product) => (
@@ -29,8 +29,8 @@ export default function ShopPage() {
                     />
                   </div>
                   <div className="text-center">
-                    <p className="font-inria text-sm text-black">{product.name}</p>
-                    <p className="font-inria text-sm text-black">{product.price}</p>
+                    <p className="product-name text-black">{product.name}</p>
+                    <p className="product-price text-black">{product.price}</p>
                   </div>
                 </Link>
               ))}
