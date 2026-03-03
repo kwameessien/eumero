@@ -130,3 +130,11 @@ body *::after {
   mix-blend-mode: normal;
   z-index: 9999;
 }
+
+.cursor-bubble.is-glowing {
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.18),
+    0 0 20px rgba(122, 90, 62, 0.55),
+    inset 0 0 12px rgba(255, 255, 255, 0.8);
+  border-color: rgba(122, 90, 62, 0.85);
+}

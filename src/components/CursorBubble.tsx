@@ -22,6 +22,25 @@ function CursorBubble() {
       targetY = event.clientY
     }
 
+    const isInteractive = (target: EventTarget | null) => {
+      if (!(target instanceof Element)) {
+        return false
+      }
+      return Boolean(target.closest('a, button, [role="button"], input, select, textarea'))
+    }
+
+    const onPointerOver = (event: PointerEvent) => {
+      if (isInteractive(event.target)) {
+        bubble.classList.add('is-glowing')
+      }
+    }
+
+    const onPointerOut = (event: PointerEvent) => {
+      if (isInteractive(event.target)) {
+        bubble.classList.remove('is-glowing')
+      }
+    }
+
     const animate = () => {
       currentX += (targetX - currentX) * 0.2
       currentY += (targetY - currentY) * 0.2
@@ -31,9 +50,13 @@ function CursorBubble() {
 
     rafId = window.requestAnimationFrame(animate)
     window.addEventListener('mousemove', onMove, { passive: true })
+    window.addEventListener('pointerover', onPointerOver, { passive: true })
+    window.addEventListener('pointerout', onPointerOut, { passive: true })
 
     return () => {
       window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('pointerover', onPointerOver)
+      window.removeEventListener('pointerout', onPointerOut)
       window.cancelAnimationFrame(rafId)
     }
   }, [])
