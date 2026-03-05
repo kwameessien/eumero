@@ -3,7 +3,6 @@ function RitualFeature() {
     <section className="border-y border-black/20">
       <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-stretch px-6 md:grid-cols-[0.42fr_0.58fr] md:divide-x md:divide-black/20">
         <div className="relative flex items-center justify-center py-10 md:py-12">
-          <span className="bubble bubble-lg bubble-accent absolute left-[20%] top-[14%]" />
           <img
             src="/assets/eumero-product-1.png"
             alt="Eumero product"

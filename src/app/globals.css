@@ -138,3 +138,70 @@ body *::after {
     inset 0 0 12px rgba(255, 255, 255, 0.8);
   border-color: rgba(122, 90, 62, 0.85);
 }
+
+.bubble {
+  position: absolute;
+  border-radius: 9999px;
+  border: 1px solid rgba(122, 90, 62, 0.35);
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.6), rgba(122, 90, 62, 0.35) 55%, rgba(122, 90, 62, 0.15));
+  box-shadow:
+    0 8px 24px rgba(122, 90, 62, 0.18),
+    inset 0 0 12px rgba(255, 255, 255, 0.4);
+  opacity: 0.85;
+}
+
+.bubble-sm {
+  width: 40px;
+  height: 40px;
+}
+
+.bubble-md {
+  width: 72px;
+  height: 72px;
+}
+
+.bubble-lg {
+  width: 120px;
+  height: 120px;
+}
+
+.bubble-accent {
+  opacity: 0.65;
+}
+
+.bubble-float-slow {
+  animation: bubbleFloat 12s ease-in-out infinite;
+}
+
+.bubble-float-fast {
+  animation: bubbleFloat 7s ease-in-out infinite;
+}
+
+.scroll-bubbles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  opacity: 0;
+  transition: opacity 600ms ease;
+}
+
+.scroll-bubbles.is-active {
+  opacity: 1;
+}
+
+.scroll-bubble {
+  position: absolute;
+  border-radius: 9999px;
+  border: 1px solid rgba(122, 90, 62, 0.35);
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.6), rgba(122, 90, 62, 0.35) 55%, rgba(122, 90, 62, 0.15));
+  box-shadow:
+    0 10px 28px rgba(122, 90, 62, 0.18),
+    inset 0 0 12px rgba(255, 255, 255, 0.4);
+  opacity: 0.85;
+  transform: translateY(0);
+}
+
+.scroll-bubbles.is-active .scroll-bubble {
+  animation: bubbleFloat 4s ease-in-out infinite;
+}
