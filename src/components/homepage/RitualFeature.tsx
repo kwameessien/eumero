@@ -12,8 +12,8 @@ function RitualFeature() {
         </div>
         <div className="relative flex items-center border-t border-black/20 py-10 md:border-t-0 md:py-12">
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/80 via-white/30 to-transparent" />
-          <div className="relative space-y-6 md:pl-10">
-            <h2 className="font-inria text-[100px] font-bold leading-none text-black">Ritual before results</h2>
+          <div className="relative flex w-full flex-col gap-6 md:pl-10">
+            <h2 className="font-inria text-[100px] font-bold leading-none text-black">ritual before results</h2>
             <button className="border border-black/70 px-6 py-3 text-xs uppercase tracking-[0.32em] text-black transition-colors hover:bg-black hover:text-white">
               shop root
             </button>
