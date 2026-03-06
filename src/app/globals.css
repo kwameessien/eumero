@@ -99,7 +99,7 @@ body *::after {
 
 .ritual-body {
   font-family: var(--font-inria), system-ui, sans-serif;
-  font-size: 36px;
+  font-size: 1.5rem;
   font-weight: 400;
 }
 
