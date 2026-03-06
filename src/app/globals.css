@@ -97,6 +97,12 @@ body *::after {
   font-size: 0.875rem;
 }
 
+.ritual-body {
+  font-family: var(--font-inria), system-ui, sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+}
+
 @keyframes marqueeScroll {
   0% {
     transform: translateX(0);

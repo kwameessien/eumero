@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useMemo, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 function ScrollBubbles() {
    const containerRef = useRef<HTMLDivElement | null>(null)
@@ -9,17 +9,7 @@ function ScrollBubbles() {
   const animationRef = useRef<number | null>(null)
   const bubblesRef = useRef<HTMLSpanElement[]>([])
   const velocityRef = useRef<{ vx: number; vy: number }[]>([])
- 
-  const bubbleSpecs = useMemo(
-    () => [
-      { size: 'bubble-sm', position: 'scroll-pos-1' },
-      { size: 'bubble-md', position: 'scroll-pos-2' },
-      { size: 'bubble-lg', position: 'scroll-pos-3' },
-      { size: 'bubble-sm', position: 'scroll-pos-4' },
-      { size: 'bubble-md', position: 'scroll-pos-5' },
-    ],
-    []
-  )
+  const positionRef = useRef<{ x: number; y: number }[]>([])
 
    useEffect(() => {
      const container = containerRef.current
@@ -28,11 +18,25 @@ function ScrollBubbles() {
      }
  
     const bubbleNodes = bubblesRef.current
-    if (bubbleNodes.length) {
+    const initBubbles = () => {
+      const width = window.innerWidth
+      const height = window.innerHeight
+      positionRef.current = bubbleNodes.map((bubble) => {
+        const rect = bubble.getBoundingClientRect()
+        const x = Math.random() * (width - rect.width)
+        const y = Math.random() * (height - rect.height)
+        bubble.style.left = `${x}px`
+        bubble.style.top = `${y}px`
+        return { x, y }
+      })
       velocityRef.current = bubbleNodes.map(() => ({
-        vx: (Math.random() * 2 - 1) * 0.3,
-        vy: (Math.random() * 2 - 1) * 0.3,
+        vx: (Math.random() * 2 - 1) * 1.4,
+        vy: (Math.random() * 2 - 1) * 1.4,
       }))
+    }
+
+    if (bubbleNodes.length) {
+      initBubbles()
     }
 
     let lastScrollY = window.scrollY
@@ -59,17 +63,32 @@ function ScrollBubbles() {
       const now = performance.now()
       const delta = Math.min(32, now - lastScrollTime)
       const scrollDelta = window.scrollY - lastScrollY
-      const scrollInfluence = Math.max(-6, Math.min(6, scrollDelta / 6))
+      const scrollInfluence = Math.max(-14, Math.min(14, scrollDelta / 4))
+
+      const width = window.innerWidth
+      const height = window.innerHeight
 
       bubbleNodes.forEach((bubble, index) => {
         const rect = bubble.getBoundingClientRect()
-        const vx = velocityRef.current[index]?.vx ?? 0
-        const vy = velocityRef.current[index]?.vy ?? 0
-        const nextX = rect.left + vx * delta + scrollInfluence
-        const nextY = rect.top + vy * delta - scrollInfluence * 0.4
+        const velocity = velocityRef.current[index] ?? { vx: 0, vy: 0 }
+        const position = positionRef.current[index] ?? { x: rect.left, y: rect.top }
 
-        bubble.style.left = `${Math.max(0, Math.min(window.innerWidth - rect.width, nextX))}px`
-        bubble.style.top = `${Math.max(0, Math.min(window.innerHeight - rect.height, nextY))}px`
+        let nextX = position.x + velocity.vx * (delta / 8) + scrollInfluence * 1.2
+        let nextY = position.y + velocity.vy * (delta / 8) - scrollInfluence * 0.6
+
+        if (nextX <= 0 || nextX >= width - rect.width) {
+          velocity.vx *= -1
+          nextX = Math.max(0, Math.min(width - rect.width, nextX))
+        }
+        if (nextY <= 0 || nextY >= height - rect.height) {
+          velocity.vy *= -1
+          nextY = Math.max(0, Math.min(height - rect.height, nextY))
+        }
+
+        positionRef.current[index] = { x: nextX, y: nextY }
+        velocityRef.current[index] = velocity
+        bubble.style.left = `${nextX}px`
+        bubble.style.top = `${nextY}px`
       })
 
       lastScrollY = window.scrollY
@@ -79,9 +98,11 @@ function ScrollBubbles() {
 
     animationRef.current = window.requestAnimationFrame(animate)
      window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', initBubbles)
  
      return () => {
-       window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', initBubbles)
        if (timeoutRef.current) {
          window.clearTimeout(timeoutRef.current)
        }
@@ -94,21 +115,21 @@ function ScrollBubbles() {
      }
    }, [])
  
-   return (
+  return (
     <div ref={containerRef} className="scroll-bubbles" aria-hidden="true">
-      {bubbleSpecs.map((spec, index) => (
+      {['bubble-sm', 'bubble-md', 'bubble-lg', 'bubble-sm', 'bubble-md', 'bubble-lg'].map((size, index) => (
         <span
-          key={`${spec.size}-${index}`}
+          key={`${size}-${index}`}
           ref={(node) => {
             if (node) {
               bubblesRef.current[index] = node
             }
           }}
-          className={`scroll-bubble ${spec.size} ${spec.position}`}
+          className={`scroll-bubble ${size}`}
         />
       ))}
-     </div>
-   )
+    </div>
+  )
  }
  
  export default ScrollBubbles

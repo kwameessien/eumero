@@ -2,6 +2,7 @@ import Marquee from '../components/homepage/Marquee'
 import Nav from '../components/homepage/Nav'
 import MainPoster from '../components/homepage/MainPoster'
 import RitualFeature from '../components/homepage/RitualFeature'
+import RitualBodyCopy from '../components/homepage/RitualBodyCopy'
 import Footer from '../components/homepage/Footer'
 
 export default function HomePage() {
@@ -13,6 +14,7 @@ export default function HomePage() {
         <div className="flex-grow">
           <MainPoster />
           <RitualFeature />
+          <RitualBodyCopy />
         </div>
         <div className="mt-auto">
           <Footer />
