@@ -205,3 +205,28 @@ body *::after {
 .scroll-bubbles.is-active .scroll-bubble {
   animation: bubbleFloat 4s ease-in-out infinite;
 }
+
+.scroll-pos-1 {
+  left: 8%;
+  top: 18%;
+}
+
+.scroll-pos-2 {
+  left: 78%;
+  top: 24%;
+}
+
+.scroll-pos-3 {
+  left: 18%;
+  top: 55%;
+}
+
+.scroll-pos-4 {
+  left: 70%;
+  top: 64%;
+}
+
+.scroll-pos-5 {
+  left: 65%;
+  top: 78%;
+}
