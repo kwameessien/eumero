@@ -14,13 +14,6 @@ body {
   margin: 0;
   background-color: white;
   overflow-x: hidden;
-  cursor: none;
-}
-
-body *,
-body *::before,
-body *::after {
-  cursor: none;
 }
 
 /* Typography utilities */

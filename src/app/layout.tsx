@@ -1,7 +1,6 @@
 import './globals.css'
 import type { ReactNode } from 'react'
 import { Arapey, Inria_Sans } from 'next/font/google'
-import CursorBubble from '../components/CursorBubble'
 import ScrollBubbles from '../components/ScrollBubbles'
 
 const inriaSans = Inria_Sans({
@@ -22,7 +21,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body className={`${inriaSans.variable} ${arapey.variable} bg-white text-black antialiased`}>
         <ScrollBubbles />
-        <CursorBubble />
         {children}
       </body>
     </html>
