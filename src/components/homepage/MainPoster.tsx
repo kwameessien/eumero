@@ -1,12 +1,24 @@
+import Image from 'next/image'
+
+/** Hero image on the home page */
+const EUMERO_MAIN_1 = '/assets/eumero-main-1.png'
+
 type MainPosterProps = {
-  imageSrc?: string
   alt?: string
 }
 
-function MainPoster({ imageSrc = '/assets/eumero-main-1.png', alt = 'Eumero' }: MainPosterProps) {
+function MainPoster({ alt = 'Eumero' }: MainPosterProps) {
   return (
     <div className="mt-[-12px] w-full">
-      <img src={imageSrc} alt={alt} className="h-auto w-full object-cover" />
+      <Image
+        src={EUMERO_MAIN_1}
+        alt={alt}
+        width={1802}
+        height={1000}
+        sizes="100vw"
+        priority
+        className="h-auto w-full object-cover"
+      />
     </div>
   )
 }
