@@ -12,6 +12,8 @@ export type Product = {
   accordionBody: string
   imageWidth: number
   imageHeight: number
+  /** Tailwind classes for PDP hero `Image` max size (tall bottles often need a tighter cap) */
+  detailHeroImageClass?: string
 }
 
 const oilParagraphs = [
@@ -38,6 +40,7 @@ export const products: Product[] = [
       'A curated blend of plant oils and extracts chosen for scalp feel, slip, and daily compatibility — including argan, jojoba, and camellia alongside supporting botanicals.',
     imageWidth: 265,
     imageHeight: 760,
+    detailHeroImageClass: 'max-w-[130px] object-contain md:max-w-[152px] lg:max-w-[168px]',
   },
   {
     id: 2,

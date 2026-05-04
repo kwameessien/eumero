@@ -5,7 +5,12 @@ type ProductDetailHeroProps = {
   product: Product
 }
 
+const defaultDetailHeroImageClass =
+  'max-w-[200px] object-contain md:max-w-[240px] lg:max-w-[280px]'
+
 function ProductDetailHero({ product }: ProductDetailHeroProps) {
+  const heroImageClass = product.detailHeroImageClass ?? defaultDetailHeroImageClass
+
   return (
     <section className="border-b border-black/20">
       <div className="mx-auto flex w-full max-w-[1600px] flex-col md:flex-row md:divide-x md:divide-black/20">
@@ -17,7 +22,7 @@ function ProductDetailHero({ product }: ProductDetailHeroProps) {
             height={product.imageHeight}
             sizes="(max-width: 767px) 85vw, 42vw"
             priority
-            className="h-auto w-full max-w-[200px] object-contain md:max-w-[240px] lg:max-w-[280px]"
+            className={`h-auto w-full ${heroImageClass}`}
           />
         </div>
 
