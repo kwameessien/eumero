@@ -2,12 +2,12 @@ import Link from 'next/link'
 
 function Footer() {
   return (
-    <footer className="w-full px-6 py-8">
+    <footer className="w-full py-8">
       <div
         aria-hidden="true"
-        className="mb-6 w-screen border-t border-black/10 mx-[calc(50%-50vw)]"
+        className="mb-6 w-full border-t border-black/20"
       />
-      <div className="flex w-full flex-wrap items-center justify-between">
+      <div className="flex w-full flex-wrap items-center justify-between px-6">
         <a href="#" className="footer-link text-gray-600 transition-colors hover:text-black">
           Newsletter
         </a>

@@ -1,45 +1,29 @@
-import Link from 'next/link'
 import Marquee from '@/components/layout/Marquee'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
+import ShopProductGrid from '@/components/shop/ShopProductGrid'
 import { products } from '@/data/products'
 
 export default function ShopPage() {
+  const gridItems = products.map((product) => ({
+    id: product.id,
+    name: product.name,
+    price: product.price,
+    image: product.image,
+    width: product.imageWidth,
+    height: product.imageHeight,
+  }))
+
   return (
     <>
       <Marquee />
       <Nav />
       <div className="flex min-h-screen flex-col">
-        <div className="mt-0 flex flex-grow flex-col">
-          <h1 className="shop-title mb-5 text-center">Shop All Products</h1>
-          <div className="mt-12 w-full px-12 pb-6">
-            <div className="mx-auto grid max-w-5xl grid-cols-2 gap-16">
-              {products.map((product) => (
-                <Link
-                  key={product.id}
-                  href={`/product/${product.id}`}
-                  className="group flex cursor-pointer flex-col items-center justify-end text-black no-underline transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-[5px]"
-                >
-                  <div className="relative mb-6 flex h-[400px] items-end overflow-hidden">
-                    <div className="absolute inset-0 opacity-0 transition-opacity duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:opacity-0" />
-                    <img
-                      src={product.image}
-                      alt={product.name}
-                      className="relative z-10 h-auto max-h-full max-w-[500px] object-contain transition-[filter,transform] duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover:animate-liquidEffect"
-                    />
-                  </div>
-                  <div className="text-center">
-                    <p className="product-name text-black">{product.name}</p>
-                    <p className="product-price text-black">{product.price}</p>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
+        <div className="flex flex-1 flex-col">
+          <h1 className="shop-title border-b border-black/20 px-6 py-10 text-center">Shop</h1>
+          <ShopProductGrid items={gridItems} />
         </div>
-        <div className="mt-10 pt-4">
-          <Footer />
-        </div>
+        <Footer />
       </div>
     </>
   )

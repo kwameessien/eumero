@@ -55,6 +55,21 @@ body {
   font-size: 2.25rem;
 }
 
+.shop-product-name {
+  font-family: var(--font-arapey), serif;
+  font-size: 0.875rem;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.shop-product-price {
+  font-family: var(--font-arapey), serif;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+}
+
 .product-title {
   font-family: var(--font-inria), system-ui, sans-serif;
   font-size: 1.5rem;

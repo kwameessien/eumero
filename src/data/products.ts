@@ -4,39 +4,51 @@ export type Product = {
   price: string
   image: string
   description?: string
+  imageWidth: number
+  imageHeight: number
 }
+
+const oilDescription =
+  'A lightweight botanical oil for scalp and lengths — supports strength and shine when used as part of a steady ritual.'
+
+const sheaDescription =
+  'Rich shea conditioning for dry ends — seals moisture and softens without a heavy finish.'
 
 export const products: Product[] = [
   {
     id: 1,
-    name: 'Product One',
-    price: '$200',
-    image: '/assets/byredo-1.png',
-    description:
-      "Bal d'Afrique is more than just a fragrance—it's a love letter to multicultural celebration, inspired by Ben Gorham's travels and memories of time spent with his father in Africa. His experiences shaped a deep connection to the continent's landscapes and diverse traditions. The fragrance opens with vibrant citrus and African florals, evoking the energy of bustling markets. At its heart, an earthy bouquet of Violet and Cyclamen reflects the untamed beauty of Africa's wild spaces. A warm base of Woods and Tonka Beans lingers, intertwining the lively spirit of his travels with an enduring sense of depth, inviting connection to Africa and beyond.",
+    name: 'Botanical Growth & Strengthening Oil',
+    price: '$52.00',
+    image: '/assets/eumero-oil.png',
+    description: oilDescription,
+    imageWidth: 265,
+    imageHeight: 760,
   },
   {
     id: 2,
-    name: 'Product Two',
-    price: '$300',
-    image: '/assets/byredo-2.png',
-    description:
-      "Bal d'Afrique is more than just a fragrance—it's a love letter to multicultural celebration, inspired by Ben Gorham's travels and memories of time spent with his father in Africa. His experiences shaped a deep connection to the continent's landscapes and diverse traditions. The fragrance opens with vibrant citrus and African florals, evoking the energy of bustling markets. At its heart, an earthy bouquet of Violet and Cyclamen reflects the untamed beauty of Africa's wild spaces. A warm base of Woods and Tonka Beans lingers, intertwining the lively spirit of his travels with an enduring sense of depth, inviting connection to Africa and beyond.",
+    name: 'Rich Shea Seal & Nourishment',
+    price: '$48.00',
+    image: '/assets/eumero-shea.png',
+    description: sheaDescription,
+    imageWidth: 526,
+    imageHeight: 530,
   },
   {
     id: 3,
-    name: 'Product Three',
-    price: '$130',
-    image: '/assets/byredo-3.png',
-    description:
-      "Bal d'Afrique is more than just a fragrance—it's a love letter to multicultural celebration, inspired by Ben Gorham's travels and memories of time spent with his father in Africa. His experiences shaped a deep connection to the continent's landscapes and diverse traditions. The fragrance opens with vibrant citrus and African florals, evoking the energy of bustling markets. At its heart, an earthy bouquet of Violet and Cyclamen reflects the untamed beauty of Africa's wild spaces. A warm base of Woods and Tonka Beans lingers, intertwining the lively spirit of his travels with an enduring sense of depth, inviting connection to Africa and beyond.",
+    name: 'Daily Ritual Oil — concentrated',
+    price: '$52.00',
+    image: '/assets/eumero-oil.png',
+    description: oilDescription,
+    imageWidth: 265,
+    imageHeight: 760,
   },
   {
     id: 4,
-    name: 'Product Four',
-    price: '$240',
-    image: '/assets/byredo-4.png',
-    description:
-      "Bal d'Afrique is more than just a fragrance—it's a love letter to multicultural celebration, inspired by Ben Gorham's travels and memories of time spent with his father in Africa. His experiences shaped a deep connection to the continent's landscapes and diverse traditions. The fragrance opens with vibrant citrus and African florals, evoking the energy of bustling markets. At its heart, an earthy bouquet of Violet and Cyclamen reflects the untamed beauty of Africa's wild spaces. A warm base of Woods and Tonka Beans lingers, intertwining the lively spirit of his travels with an enduring sense of depth, inviting connection to Africa and beyond.",
+    name: 'Shea Butter Replenishing Cream',
+    price: '$48.00',
+    image: '/assets/eumero-shea.png',
+    description: sheaDescription,
+    imageWidth: 526,
+    imageHeight: 530,
   },
 ]
