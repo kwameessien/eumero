@@ -17,6 +17,9 @@ function Nav() {
           about
         </a>
         <a href="#" className="nav-link text-gray-600 transition-colors hover:text-black">
+          search
+        </a>
+        <a href="#" className="nav-link text-gray-600 transition-colors hover:text-black">
           cart
         </a>
       </div>
