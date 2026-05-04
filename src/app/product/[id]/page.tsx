@@ -2,6 +2,7 @@ import Marquee from '@/components/layout/Marquee'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import ProductDetailHero from '@/components/shop/ProductDetailHero'
+import ProductSplitPanel from '@/components/shop/ProductSplitPanel'
 import { products } from '@/data/products'
 
 type ProductPageProps = {
@@ -39,6 +40,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <div className="flex min-h-screen flex-col">
         <div className="min-h-0 flex-1">
           <ProductDetailHero product={product} />
+          {product.splitPanel ? <ProductSplitPanel panel={product.splitPanel} /> : null}
         </div>
         <div className="shrink-0">
           <Footer />

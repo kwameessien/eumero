@@ -1,3 +1,13 @@
+/** Optional strip below the hero: ingredients graphic + lifestyle photo. */
+export type PdpSplitPanel = {
+  ingredientsSrc: string
+  ingredientsAlt: string
+  ingredientsWidth: number
+  ingredientsHeight: number
+  lifestyleSrc: string
+  lifestyleAlt: string
+}
+
 export type Product = {
   id: number
   /** Short display title (e.g. ROOT) */
@@ -14,6 +24,7 @@ export type Product = {
   imageHeight: number
   /** Tailwind classes for PDP hero `Image` max size (tall bottles often need a tighter cap) */
   detailHeroImageClass?: string
+  splitPanel?: PdpSplitPanel
 }
 
 const oilParagraphs = [
@@ -25,6 +36,15 @@ const sheaParagraphs = [
   'A concentrated shea blend for dry ends and fragile lengths — seals moisture and softens without a waxy finish.',
   'Work a small amount through mid-lengths to ends after styling, or on damp hair before air-dry or diffuse.',
 ]
+
+const defaultPdpSplitPanel: PdpSplitPanel = {
+  ingredientsSrc: '/assets/Info-natural-hair-ingredients.png',
+  ingredientsAlt: 'Key botanical ingredients for Eumero hair care',
+  ingredientsWidth: 801,
+  ingredientsHeight: 860,
+  lifestyleSrc: '/assets/product-image.png',
+  lifestyleAlt: 'Applying Eumero hair oil in a daily ritual',
+}
 
 export const products: Product[] = [
   {
@@ -41,6 +61,7 @@ export const products: Product[] = [
     imageWidth: 265,
     imageHeight: 760,
     detailHeroImageClass: 'max-w-[130px] object-contain md:max-w-[152px] lg:max-w-[168px]',
+    splitPanel: defaultPdpSplitPanel,
   },
   {
     id: 2,
@@ -55,5 +76,6 @@ export const products: Product[] = [
       'Unrefined shea and complementary emollients help lock in hydration and reduce friction on the cuticle for hair that feels supple and controlled.',
     imageWidth: 526,
     imageHeight: 530,
+    splitPanel: defaultPdpSplitPanel,
   },
 ]
