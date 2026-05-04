@@ -14,7 +14,7 @@ function ProductDetailHero({ product }: ProductDetailHeroProps) {
   return (
     <section className="border-b border-black/20">
       <div className="mx-auto flex w-full max-w-[1600px] flex-col md:flex-row md:divide-x md:divide-black/20">
-        <div className="relative flex w-full min-h-[320px] flex-1 items-center justify-center bg-[#f4f3f0] px-8 py-14 md:min-h-[calc(100vh-12rem)] md:w-1/2 md:py-16">
+        <div className="relative flex w-full min-h-[320px] flex-1 items-center justify-center px-8 py-14 md:min-h-[calc(100vh-12rem)] md:w-1/2 md:py-16">
           <Image
             src={product.image}
             alt={product.name}
@@ -27,7 +27,6 @@ function ProductDetailHero({ product }: ProductDetailHeroProps) {
         </div>
 
         <div className="relative flex w-full flex-1 flex-col justify-center border-t border-black/20 px-8 py-14 md:w-1/2 md:border-t-0 md:py-16 md:pl-12 md:pr-14 lg:pl-16 lg:pr-20">
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-transparent md:from-white/50" />
           <div className="relative flex max-w-xl flex-col gap-8">
             <div className="flex flex-col gap-3">
               <h1 className="product-detail-headline text-black">{product.headline}</h1>
