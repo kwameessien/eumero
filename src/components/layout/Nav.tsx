@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 
 function SearchIcon({ className }: { className?: string }) {
@@ -41,9 +42,11 @@ function MenuIcon({ className }: { className?: string }) {
 }
 
 function Nav() {
+  const pathname = usePathname()
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const clusterRef = useRef<HTMLDivElement | null>(null)
+  const showNavBorder = pathname !== '/'
 
   useEffect(() => {
     function handlePointerDown(event: MouseEvent) {
@@ -61,7 +64,9 @@ function Nav() {
   }, [])
 
   return (
-    <nav className="relative mt-8 flex w-full items-center justify-between border-b border-black/20 px-4 pb-1 pt-2">
+    <nav
+      className={`relative mt-8 flex w-full items-center justify-between px-4 pb-1 pt-2${showNavBorder ? ' border-b border-black/20' : ''}`}
+    >
       <Link href="/" className="nav-logo text-black">
         EUMERO.
       </Link>
