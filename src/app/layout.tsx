@@ -1,7 +1,7 @@
 import './globals.css'
 import type { ReactNode } from 'react'
 import { Arapey, Inria_Sans } from 'next/font/google'
-import ScrollBubbles from '../components/ScrollBubbles'
+import ScrollBubbles from '@/components/layout/ScrollBubbles'
 
 const inriaSans = Inria_Sans({
   subsets: ['latin'],

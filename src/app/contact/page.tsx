@@ -1,6 +1,6 @@
-import Marquee from '../../components/homepage/Marquee'
-import Nav from '../../components/homepage/Nav'
-import Footer from '../../components/homepage/Footer'
+import Marquee from '@/components/layout/Marquee'
+import Nav from '@/components/layout/Nav'
+import Footer from '@/components/layout/Footer'
 
 export default function ContactPage() {
   return (

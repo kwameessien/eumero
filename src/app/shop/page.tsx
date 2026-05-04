@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import Marquee from '../../components/homepage/Marquee'
-import Nav from '../../components/homepage/Nav'
-import Footer from '../../components/homepage/Footer'
-import { products } from '../../data/products'
+import Marquee from '@/components/layout/Marquee'
+import Nav from '@/components/layout/Nav'
+import Footer from '@/components/layout/Footer'
+import { products } from '@/data/products'
 
 export default function ShopPage() {
   return (

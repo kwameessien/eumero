@@ -1,16 +1,15 @@
-import Marquee from '../../../components/homepage/Marquee'
-import Nav from '../../../components/homepage/Nav'
-import Footer from '../../../components/homepage/Footer'
-import { products } from '../../../data/products'
+import Marquee from '@/components/layout/Marquee'
+import Nav from '@/components/layout/Nav'
+import Footer from '@/components/layout/Footer'
+import { products } from '@/data/products'
 
 type ProductPageProps = {
-  params: {
-    id: string
-  }
+  params: Promise<{ id: string }>
 }
 
-export default function ProductPage({ params }: ProductPageProps) {
-  const productId = Number(params.id)
+export default async function ProductPage({ params }: ProductPageProps) {
+  const { id } = await params
+  const productId = Number(id)
   const product = products.find((item) => item.id === productId)
 
   if (!product) {

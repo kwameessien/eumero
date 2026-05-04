@@ -1,9 +1,9 @@
-import Marquee from '../components/homepage/Marquee'
-import Nav from '../components/homepage/Nav'
-import MainPoster from '../components/homepage/MainPoster'
-import RitualFeature from '../components/homepage/RitualFeature'
-import RitualBodyCopy from '../components/homepage/RitualBodyCopy'
-import Footer from '../components/homepage/Footer'
+import Marquee from '@/components/layout/Marquee'
+import Nav from '@/components/layout/Nav'
+import Footer from '@/components/layout/Footer'
+import MainPoster from '@/components/homepage/MainPoster'
+import RitualFeature from '@/components/homepage/RitualFeature'
+import RitualBodyCopy from '@/components/homepage/RitualBodyCopy'
 
 export default function HomePage() {
   return (
