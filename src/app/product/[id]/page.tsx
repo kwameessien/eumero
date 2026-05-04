@@ -1,6 +1,7 @@
 import Marquee from '@/components/layout/Marquee'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
+import ProductDetailHero from '@/components/shop/ProductDetailHero'
 import { products } from '@/data/products'
 
 type ProductPageProps = {
@@ -36,25 +37,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
       <Marquee />
       <Nav />
       <div className="flex min-h-screen flex-col">
-        <div className="mt-12 flex-grow px-12 py-12">
-          <div className="mx-auto max-w-7xl">
-            <div className="grid grid-cols-1 items-start gap-16 md:grid-cols-2">
-              <div className="flex justify-center">
-                <img src={product.image} alt={product.name} className="h-auto max-h-[400px] w-full object-contain" />
-              </div>
-
-              <div className="flex flex-col">
-                <h1 className="product-title mb-6 text-black">{product.name}</h1>
-                <p className="product-description mb-8 text-black">{product.description}</p>
-                <p className="product-price-lg mb-8 text-black">{product.price}</p>
-                <button className="product-cta rounded-lg bg-[#AAA397] px-8 py-4 text-white transition-colors hover:bg-[#9a9587]">
-                  ADD TO CART
-                </button>
-              </div>
-            </div>
-          </div>
+        <div className="min-h-0 flex-1">
+          <ProductDetailHero product={product} />
         </div>
-        <div className="mt-auto">
+        <div className="shrink-0">
           <Footer />
         </div>
       </div>

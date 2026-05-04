@@ -1,35 +1,55 @@
 export type Product = {
   id: number
+  /** Short display title (e.g. ROOT) */
+  headline: string
   name: string
   price: string
   image: string
   description?: string
+  /** Marketing body shown on the product page */
+  bodyParagraphs: string[]
+  accordionTitle: string
+  accordionBody: string
   imageWidth: number
   imageHeight: number
 }
 
-const oilDescription =
-  'A lightweight botanical oil for scalp and lengths — supports strength and shine when used as part of a steady ritual.'
+const oilParagraphs = [
+  'Formulated to support scalp comfort and resilient lengths, ROOT layers lightweight oils that absorb cleanly — no heavy residue, no shortcut shine.',
+  'Use on dry or damp hair: a few drops massaged at the roots, then smoothed through the ends as part of a steady ritual.',
+]
 
-const sheaDescription =
-  'Rich shea conditioning for dry ends — seals moisture and softens without a heavy finish.'
+const sheaParagraphs = [
+  'A concentrated shea blend for dry ends and fragile lengths — seals moisture and softens without a waxy finish.',
+  'Work a small amount through mid-lengths to ends after styling, or on damp hair before air-dry or diffuse.',
+]
 
 export const products: Product[] = [
   {
     id: 1,
+    headline: 'ROOT',
     name: 'Botanical Growth & Strengthening Oil',
     price: '$52.00',
     image: '/assets/eumero-oil.png',
-    description: oilDescription,
+    description: oilParagraphs.join(' '),
+    bodyParagraphs: oilParagraphs,
+    accordionTitle: 'Powered by 17 active botanicals.',
+    accordionBody:
+      'A curated blend of plant oils and extracts chosen for scalp feel, slip, and daily compatibility — including argan, jojoba, and camellia alongside supporting botanicals.',
     imageWidth: 265,
     imageHeight: 760,
   },
   {
     id: 2,
+    headline: 'SEAL',
     name: 'Rich Shea Seal & Nourishment',
     price: '$48.00',
     image: '/assets/eumero-shea.png',
-    description: sheaDescription,
+    description: sheaParagraphs.join(' '),
+    bodyParagraphs: sheaParagraphs,
+    accordionTitle: 'Powered by shea and sealing butters.',
+    accordionBody:
+      'Unrefined shea and complementary emollients help lock in hydration and reduce friction on the cuticle for hair that feels supple and controlled.',
     imageWidth: 526,
     imageHeight: 530,
   },
