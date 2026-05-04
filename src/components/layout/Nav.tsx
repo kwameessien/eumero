@@ -67,103 +67,105 @@ function Nav() {
 
   return (
     <nav
-      className={`relative mt-8 flex w-full items-center justify-between px-4 pb-1 pt-2${showNavBorder ? ' border-b border-black/20' : ''}`}
+      className={`relative mt-8 w-full${showNavBorder ? ' border-b border-black/20' : ''}`}
     >
-      <Link href="/" className="nav-logo text-black">
-        EUMERO.
-      </Link>
+      <div className="mx-auto flex w-full max-w-[1600px] items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <Link href="/" className="nav-logo text-black">
+          EUMERO.
+        </Link>
 
-      <div ref={clusterRef} className="flex items-center gap-8">
-        <div className="hidden items-center gap-8 lg:flex">
-          <Link href="/shop" className="nav-link text-gray-600 transition-colors hover:text-black">
-            shop
-          </Link>
-          <a href="#" className="nav-link text-gray-600 transition-colors hover:text-black">
-            rituals
-          </a>
-          <a href="#" className="nav-link text-gray-600 transition-colors hover:text-black">
-            about
-          </a>
-        </div>
+        <div ref={clusterRef} className="flex items-center gap-8">
+          <div className="hidden items-center gap-8 lg:flex">
+            <Link href="/shop" className="nav-link text-gray-600 transition-colors hover:text-black">
+              shop
+            </Link>
+            <a href="#" className="nav-link text-gray-600 transition-colors hover:text-black">
+              rituals
+            </a>
+            <a href="#" className="nav-link text-gray-600 transition-colors hover:text-black">
+              about
+            </a>
+          </div>
 
-        <div className="flex items-center">
-          {isSearchOpen ? (
-            <input
-              type="text"
-              placeholder="Search..."
-              autoFocus
-              className="w-36 border-b border-black bg-transparent pb-0.5 text-sm text-black outline-none placeholder:text-gray-400 lg:w-28"
-            />
-          ) : (
-            <>
-              <button
-                type="button"
-                onClick={() => setIsSearchOpen(true)}
-                className="flex text-black transition-opacity hover:opacity-70 lg:hidden"
-                aria-label="Open search"
-              >
-                <SearchIcon />
-              </button>
-              <button
-                type="button"
-                onClick={() => setIsSearchOpen(true)}
-                className="nav-link hidden text-gray-600 transition-colors hover:text-black lg:inline"
-              >
-                search
-              </button>
-            </>
-          )}
-        </div>
+          <div className="flex items-center">
+            {isSearchOpen ? (
+              <input
+                type="text"
+                placeholder="Search..."
+                autoFocus
+                className="w-36 border-b border-black bg-transparent pb-0.5 text-sm text-black outline-none placeholder:text-gray-400 lg:w-28"
+              />
+            ) : (
+              <>
+                <button
+                  type="button"
+                  onClick={() => setIsSearchOpen(true)}
+                  className="flex text-black transition-opacity hover:opacity-70 lg:hidden"
+                  aria-label="Open search"
+                >
+                  <SearchIcon />
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setIsSearchOpen(true)}
+                  className="nav-link hidden text-gray-600 transition-colors hover:text-black lg:inline"
+                >
+                  search
+                </button>
+              </>
+            )}
+          </div>
 
-        <a
-          href="#"
-          className="nav-link hidden text-gray-600 transition-colors hover:text-black lg:inline"
-        >
-          cart({totalQuantity})
-        </a>
-
-        <div className="relative flex items-center gap-5 lg:hidden">
-          <button
-            type="button"
-            onClick={() => setIsMobileMenuOpen((open) => !open)}
-            className="flex text-black transition-opacity hover:opacity-70"
-            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+          <a
+            href="#"
+            className="nav-link hidden text-gray-600 transition-colors hover:text-black lg:inline"
           >
-            <MenuIcon />
-          </button>
+            cart({totalQuantity})
+          </a>
 
-          {isMobileMenuOpen ? (
-            <div className="absolute right-0 top-full z-50 mt-3 min-w-[10rem] border border-black/20 bg-white py-2 shadow-sm">
-              <Link
-                href="/shop"
-                className="nav-link block px-4 py-2 text-gray-600 transition-colors hover:bg-black/5 hover:text-black"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                shop
-              </Link>
-              <a
-                href="#"
-                className="nav-link block px-4 py-2 text-gray-600 transition-colors hover:bg-black/5 hover:text-black"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                rituals
-              </a>
-              <a
-                href="#"
-                className="nav-link block px-4 py-2 text-gray-600 transition-colors hover:bg-black/5 hover:text-black"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                about
-              </a>
-              <a
-                href="#"
-                className="nav-link block border-t border-black/10 px-4 py-2 text-gray-600 transition-colors hover:bg-black/5 hover:text-black"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                cart({totalQuantity})
-              </a>
-            </div>
-          ) : null}
+          <div className="relative flex items-center gap-5 lg:hidden">
+            <button
+              type="button"
+              onClick={() => setIsMobileMenuOpen((open) => !open)}
+              className="flex text-black transition-opacity hover:opacity-70"
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            >
+              <MenuIcon />
+            </button>
+
+            {isMobileMenuOpen ? (
+              <div className="absolute right-0 top-full z-50 mt-3 min-w-[10rem] border border-black/20 bg-white py-2 shadow-sm">
+                <Link
+                  href="/shop"
+                  className="nav-link block px-4 py-2 text-gray-600 transition-colors hover:bg-black/5 hover:text-black"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  shop
+                </Link>
+                <a
+                  href="#"
+                  className="nav-link block px-4 py-2 text-gray-600 transition-colors hover:bg-black/5 hover:text-black"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  rituals
+                </a>
+                <a
+                  href="#"
+                  className="nav-link block px-4 py-2 text-gray-600 transition-colors hover:bg-black/5 hover:text-black"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  about
+                </a>
+                <a
+                  href="#"
+                  className="nav-link block border-t border-black/10 px-4 py-2 text-gray-600 transition-colors hover:bg-black/5 hover:text-black"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  cart({totalQuantity})
+                </a>
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
     </nav>
