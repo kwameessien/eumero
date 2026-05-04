@@ -1,10 +1,25 @@
  'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 function Nav() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const searchContainerRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    function handlePointerDown(event: MouseEvent) {
+      if (!searchContainerRef.current?.contains(event.target as Node)) {
+        setIsSearchOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handlePointerDown)
+
+    return () => {
+      document.removeEventListener('mousedown', handlePointerDown)
+    }
+  }, [])
 
   return (
     <nav className="mt-8 flex w-full items-center justify-between border-b border-black/20 px-4 pb-1 pt-2">
@@ -21,7 +36,7 @@ function Nav() {
         <a href="#" className="nav-link text-gray-600 transition-colors hover:text-black">
           about
         </a>
-        <div className="flex items-center">
+        <div ref={searchContainerRef} className="flex items-center">
           {isSearchOpen ? (
             <input
               type="text"
