@@ -1,4 +1,6 @@
 @import "tailwindcss";
+/* Ensure utilities referenced only from data modules (e.g. detailHeroImageClass) are generated */
+@source "../data/**/*.{ts,tsx}";
 
 *,
 *::before,
