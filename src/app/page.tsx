@@ -11,9 +11,13 @@ export default function HomePage() {
       <Marquee />
       <Nav />
       <div className="flex min-h-screen flex-col">
-        <div className="flex-grow">
-          <MainPoster />
-          <RitualFeature />
+        <div className="flex min-h-0 flex-1 flex-col">
+          <div className="shrink-0">
+            <MainPoster />
+          </div>
+          <div className="shrink-0">
+            <RitualFeature />
+          </div>
           <RitualBodyCopy />
         </div>
         <div className="mt-auto">
