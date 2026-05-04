@@ -10,7 +10,7 @@ function RitualFeature() {
             alt="Eumero product"
             width={291}
             height={771}
-            sizes="(max-width: 768px) 120px, 160px"
+            sizes="(max-width: 767px) 120px, 160px"
             className="h-auto w-full max-w-[120px] object-contain md:max-w-[160px] md:-translate-x-24"
           />
         </div>
