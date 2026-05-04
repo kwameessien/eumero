@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
+import { useCart } from '@/context/CartContext'
 
 function SearchIcon({ className }: { className?: string }) {
   return (
@@ -43,6 +44,7 @@ function MenuIcon({ className }: { className?: string }) {
 
 function Nav() {
   const pathname = usePathname()
+  const { totalQuantity } = useCart()
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const clusterRef = useRef<HTMLDivElement | null>(null)
@@ -117,7 +119,7 @@ function Nav() {
           href="#"
           className="nav-link hidden text-gray-600 transition-colors hover:text-black lg:inline"
         >
-          cart
+          cart({totalQuantity})
         </a>
 
         <div className="relative flex items-center gap-5 lg:hidden">
@@ -158,7 +160,7 @@ function Nav() {
                 className="nav-link block border-t border-black/10 px-4 py-2 text-gray-600 transition-colors hover:bg-black/5 hover:text-black"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                cart
+                cart({totalQuantity})
               </a>
             </div>
           ) : null}

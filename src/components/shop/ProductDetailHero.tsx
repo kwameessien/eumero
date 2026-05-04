@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import AddToCartButton from '@/components/shop/AddToCartButton'
 import type { Product } from '@/data/products'
 
 type ProductDetailHeroProps = {
@@ -58,12 +59,7 @@ function ProductDetailHero({ product }: ProductDetailHeroProps) {
 
             <p className="product-detail-price text-black">{product.price}</p>
 
-            <button
-              type="button"
-              className="product-detail-cta w-full max-w-md border border-black bg-black px-8 py-4 text-white transition-colors hover:bg-black/90"
-            >
-              ADD TO CART
-            </button>
+            <AddToCartButton className="product-detail-cta w-full max-w-md border border-black bg-black px-8 py-4 text-white transition-colors hover:bg-black/90" />
           </div>
         </div>
       </div>

@@ -2,6 +2,7 @@ import './globals.css'
 import type { ReactNode } from 'react'
 import { Arapey, Inria_Sans } from 'next/font/google'
 import ScrollBubbles from '@/components/layout/ScrollBubbles'
+import { CartProvider } from '@/context/CartContext'
 
 const inriaSans = Inria_Sans({
   subsets: ['latin'],
@@ -21,7 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <body className={`${inriaSans.variable} ${arapey.variable} bg-white text-black antialiased`}>
         <ScrollBubbles />
-        {children}
+        <CartProvider>{children}</CartProvider>
       </body>
     </html>
   )
