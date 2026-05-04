@@ -17,10 +17,11 @@ type ShopProductGridProps = {
 function ShopProductGrid({ items }: ShopProductGridProps) {
   const colCount = 2
   const rowCount = Math.max(1, Math.ceil(items.length / colCount))
+  const rowClass = `shop-product-grid--r${Math.min(rowCount, 12)}`
 
   return (
-    <div className="w-full shrink-0 border-l border-black/20">
-      <div className="grid grid-cols-2">
+    <div className="flex min-h-0 w-full flex-1 flex-col border-l border-black/20">
+      <div className={`shop-product-grid ${rowClass}`}>
         {items.map((item, index) => {
           const rowIndex = Math.floor(index / colCount)
           const isBottomRow = rowIndex === rowCount - 1
@@ -32,7 +33,7 @@ function ShopProductGrid({ items }: ShopProductGridProps) {
             <Link
               key={item.id}
               href={`/product/${item.id}`}
-              className={`group flex min-h-[min(52vh,440px)] flex-col justify-between p-8 transition-colors hover:bg-black/[0.02] md:min-h-[min(48vh,520px)] md:p-12 lg:min-h-[520px] ${isSecondColumn ? 'border-r border-black/20' : ''} ${isBottomRow ? '' : 'border-b border-black/20'}`}
+              className={`group flex h-full min-h-[260px] flex-col justify-between p-8 transition-colors hover:bg-black/[0.02] md:min-h-[300px] ${isSecondColumn ? 'border-r border-black/20' : ''} ${isBottomRow ? '' : 'border-b border-black/20'}`}
             >
               <div className="flex flex-1 flex-col items-center justify-center pb-6">
                 <Image

@@ -112,6 +112,63 @@ body {
   line-height: 1.55;
 }
 
+/* Shop: equal-height rows without inline grid-template-rows (avoids tooling warnings) */
+.shop-product-grid {
+  display: grid;
+  flex: 1 1 0%;
+  min-height: 0;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.shop-product-grid--r1 {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+}
+
+.shop-product-grid--r2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.shop-product-grid--r3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+}
+
+.shop-product-grid--r4 {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+}
+
+.shop-product-grid--r5 {
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+}
+
+.shop-product-grid--r6 {
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+}
+
+.shop-product-grid--r7 {
+  grid-template-rows: repeat(7, minmax(0, 1fr));
+}
+
+.shop-product-grid--r8 {
+  grid-template-rows: repeat(8, minmax(0, 1fr));
+}
+
+.shop-product-grid--r9 {
+  grid-template-rows: repeat(9, minmax(0, 1fr));
+}
+
+.shop-product-grid--r10 {
+  grid-template-rows: repeat(10, minmax(0, 1fr));
+}
+
+.shop-product-grid--r11 {
+  grid-template-rows: repeat(11, minmax(0, 1fr));
+}
+
+.shop-product-grid--r12 {
+  grid-template-rows: repeat(12, minmax(0, 1fr));
+}
+
 @keyframes marqueeScroll {
   0% {
     transform: translateX(0);

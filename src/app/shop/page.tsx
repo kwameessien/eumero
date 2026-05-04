@@ -19,14 +19,16 @@ export default function ShopPage() {
       <Marquee />
       <Nav />
       <div className="flex min-h-screen flex-col">
-        <div className="relative shrink-0">
+        <div className="relative flex min-h-0 flex-1 flex-col">
           <div
             aria-hidden
             className="pointer-events-none absolute bottom-[-1px] left-1/2 top-0 z-[2] w-px -translate-x-1/2 bg-black/20"
           />
           <ShopProductGrid items={gridItems} />
         </div>
-        <Footer />
+        <div className="shrink-0">
+          <Footer />
+        </div>
       </div>
     </>
   )
