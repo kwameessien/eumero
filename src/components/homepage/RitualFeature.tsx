@@ -1,11 +1,16 @@
+import Image from 'next/image'
+
 function RitualFeature() {
   return (
     <section className="border-y border-black/20">
       <div className="mx-auto flex w-full max-w-6xl flex-col px-6 md:flex-row md:divide-x md:divide-black/20">
         <div className="relative flex w-full items-center justify-center py-10 md:w-[42%] md:py-12">
-          <img
+          <Image
             src="/assets/eumero-product-1.png"
             alt="Eumero product"
+            width={291}
+            height={771}
+            sizes="(max-width: 768px) 120px, 160px"
             className="h-auto w-full max-w-[120px] object-contain md:max-w-[160px] md:-translate-x-24"
           />
         </div>
