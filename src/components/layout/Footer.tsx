@@ -2,11 +2,7 @@ import Link from 'next/link'
 
 function Footer() {
   return (
-    <footer className="w-full py-8">
-      <div
-        aria-hidden="true"
-        className="mb-6 w-full border-t border-black/20"
-      />
+    <footer className="w-full border-t border-black/20 py-8">
       <div className="flex w-full flex-wrap items-center justify-between px-6">
         <a href="#" className="footer-link text-gray-600 transition-colors hover:text-black">
           Newsletter

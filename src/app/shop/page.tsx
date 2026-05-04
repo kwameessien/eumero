@@ -19,8 +19,11 @@ export default function ShopPage() {
       <Marquee />
       <Nav />
       <div className="flex min-h-screen flex-col">
-        <div className="flex flex-1 flex-col">
-          <h1 className="shop-title border-b border-black/20 px-6 py-10 text-center">Shop</h1>
+        <div className="relative shrink-0">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute bottom-[-1px] left-1/2 top-0 z-[2] w-px -translate-x-1/2 bg-black/20"
+          />
           <ShopProductGrid items={gridItems} />
         </div>
         <Footer />
