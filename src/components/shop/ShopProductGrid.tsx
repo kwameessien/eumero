@@ -16,13 +16,14 @@ type ShopProductGridProps = {
 
 function ShopProductGrid({ items }: ShopProductGridProps) {
   const colCount = 2
-  const bottomRowStart = items.length - colCount
+  const rowCount = Math.max(1, Math.ceil(items.length / colCount))
 
   return (
     <div className="w-full shrink-0 border-l border-black/20">
       <div className="grid grid-cols-2">
         {items.map((item, index) => {
-          const isBottomRow = index >= bottomRowStart
+          const rowIndex = Math.floor(index / colCount)
+          const isBottomRow = rowIndex === rowCount - 1
           // Odd index = second column: border-r on every row (outer right edge of grid).
           // Even index = first column: no border-r here — the shop page draws the center vertical
           // so we do not stack a second stroke on the column gutter.

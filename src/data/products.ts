@@ -33,22 +33,4 @@ export const products: Product[] = [
     imageWidth: 526,
     imageHeight: 530,
   },
-  {
-    id: 3,
-    name: 'Daily Ritual Oil — concentrated',
-    price: '$52.00',
-    image: '/assets/eumero-oil.png',
-    description: oilDescription,
-    imageWidth: 265,
-    imageHeight: 760,
-  },
-  {
-    id: 4,
-    name: 'Shea Butter Replenishing Cream',
-    price: '$48.00',
-    image: '/assets/eumero-shea.png',
-    description: sheaDescription,
-    imageWidth: 526,
-    imageHeight: 530,
-  },
 ]
