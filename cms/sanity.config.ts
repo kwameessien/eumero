@@ -3,8 +3,8 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 
 import {apiVersion, dataset, projectId} from './studioEnv'
-import {schema} from '../ui/src/sanity/schemaTypes'
-import {structure} from '../ui/src/sanity/structure'
+import {schema} from './sanity/schemaTypes'
+import {structure} from './sanity/structure'
 
 export default defineConfig({
   name: 'default',

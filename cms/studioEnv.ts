@@ -1,6 +1,6 @@
 /**
  * Studio-only env: Vite inlines `SANITY_STUDIO_*` for the browser bundle.
- * Next.js still uses `NEXT_PUBLIC_*` via `ui/src/sanity/env.ts`.
+ * The storefront reads `NEXT_PUBLIC_*` from `cms/sanity/env.ts` (via `@/sanity/...`).
  */
 function assertValue<T>(v: T | undefined, errorMessage: string): T {
   if (v === undefined) {
