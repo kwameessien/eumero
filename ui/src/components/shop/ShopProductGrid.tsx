@@ -6,8 +6,6 @@ export type ShopProductGridItem = {
   name: string
   price: string
   image: string
-  width: number
-  height: number
 }
 
 type ShopProductGridProps = {
@@ -36,14 +34,15 @@ function ShopProductGrid({ items }: ShopProductGridProps) {
               className={`group flex h-full min-h-[260px] flex-col justify-between p-8 transition-colors hover:bg-black/[0.02] md:min-h-[300px] ${isSecondColumn ? 'border-r border-black/20' : ''} ${isBottomRow ? '' : 'border-b border-black/20'}`}
             >
               <div className="flex flex-1 flex-col items-center justify-center pb-6">
-                <Image
-                  src={item.image}
-                  alt={item.name}
-                  width={item.width}
-                  height={item.height}
-                  sizes="(max-width: 767px) 42vw, 28vw"
-                  className="h-auto max-h-[240px] w-auto object-contain md:max-h-[320px] lg:max-h-[380px]"
-                />
+                <div className="relative h-[min(66vw,280px)] w-full max-w-[min(88vw,320px)] md:h-[min(36vw,340px)] md:max-w-[min(42vw,360px)] lg:h-[400px] lg:max-w-[400px]">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    fill
+                    sizes="(max-width: 767px) 45vw, 30vw"
+                    className="object-contain object-center"
+                  />
+                </div>
               </div>
               <div className="text-left">
                 <p className="shop-product-name text-black">{item.name}</p>

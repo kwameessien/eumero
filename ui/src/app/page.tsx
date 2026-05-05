@@ -4,8 +4,9 @@ import Footer from '@/components/layout/Footer'
 import MainPoster from '@/components/homepage/MainPoster'
 import RitualFeature from '@/components/homepage/RitualFeature'
 import RitualBodyCopy from '@/components/homepage/RitualBodyCopy'
+import SanityPosts from '@/components/homepage/SanityPosts'
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
     <>
       <Marquee />
@@ -19,6 +20,7 @@ export default function HomePage() {
             <RitualFeature />
           </div>
           <RitualBodyCopy />
+          <SanityPosts />
         </div>
         <div className="mt-auto">
           <Footer />

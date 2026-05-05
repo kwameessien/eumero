@@ -10,8 +10,6 @@ export default function ShopPage() {
     name: product.name,
     price: product.price,
     image: product.image,
-    width: product.imageWidth,
-    height: product.imageHeight,
   }))
 
   return (
