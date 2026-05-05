@@ -1,24 +1,13 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
+import { PortableText, type PortableTextComponents } from '@portabletext/react'
+import type { PortableTextBlock } from '@portabletext/types'
 import type { SanityDocument } from 'next-sanity'
+import type { Image as SanityImage } from 'sanity'
 
 import { client } from '@/sanity/lib/client'
 import { urlFor } from '@/sanity/lib/image'
-
-type BlockChild = { text?: string }
-type PortableBlock = { _type?: string; children?: BlockChild[] }
-
-function portableTextToPlainText(blocks: PortableBlock[] | undefined): string {
-  if (!blocks?.length) return ''
-  return blocks
-    .map((block) => {
-      if (block._type !== 'block' || !block.children?.length) return ''
-      return block.children.map((child) => child.text ?? '').join('')
-    })
-    .filter(Boolean)
-    .join('\n\n')
-}
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]{
   _id,
@@ -34,7 +23,32 @@ type PostDoc = SanityDocument & {
   title?: string
   publishedAt?: string
   image?: Parameters<typeof urlFor>[0]
-  body?: PortableBlock[]
+  body?: PortableTextBlock[]
+}
+
+const portableTextComponents: PortableTextComponents = {
+  types: {
+    image: ({ value }) => {
+      if (!value?.asset) {
+        return null
+      }
+      const src = urlFor(value as SanityImage).width(1200).url()
+      if (!src) {
+        return null
+      }
+      return (
+        <figure className="my-6">
+          <Image
+            alt={value.alt || ''}
+            className="h-auto w-full rounded-sm"
+            height={Math.min(value.asset?.metadata?.dimensions?.height ?? 800, 1200)}
+            src={src}
+            width={Math.min(value.asset?.metadata?.dimensions?.width ?? 1200, 1200)}
+          />
+        </figure>
+      )
+    },
+  },
 }
 
 export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -45,7 +59,6 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     notFound()
   }
 
-  const bodyText = portableTextToPlainText(post.body)
   const imageUrl = post.image ? urlFor(post.image).width(1200).height(630).url() : null
 
   return (
@@ -71,8 +84,10 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             />
           </div>
         ) : null}
-        {bodyText ? (
-          <div className="whitespace-pre-wrap text-black/80">{bodyText}</div>
+        {post.body?.length ? (
+          <div className="prose prose-neutral max-w-none text-pretty text-black prose-headings:font-[family-name:var(--font-arapey)] prose-headings:font-normal prose-p:text-black/80 prose-a:text-black">
+            <PortableText components={portableTextComponents} value={post.body} />
+          </div>
         ) : null}
       </article>
     </main>

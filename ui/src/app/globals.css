@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 /* Ensure utilities referenced only from data modules (e.g. detailHeroImageClass) are generated */
 @source "../data/**/*.{ts,tsx}";
 
