@@ -1,0 +1,10 @@
+{
+  "extends": "../ui/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "."
+  },
+  "include": [
+    "./**/*.ts",
+    "../ui/src/sanity/**/*.ts"
+  ]
+}

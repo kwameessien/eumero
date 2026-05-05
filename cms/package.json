@@ -1,0 +1,19 @@
+{
+  "name": "@eumero/studio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev --host 0.0.0.0 --port 3333",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "lint": "sanity lint"
+  },
+  "dependencies": {
+    "@sanity/vision": "^5.24.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "sanity": "^5.24.0",
+    "styled-components": "^6.4.1"
+  }
+}

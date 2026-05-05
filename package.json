@@ -1,35 +1,30 @@
 {
-  "name": "eumero",
+  "name": "eumero-monorepo",
   "private": true,
   "version": "0.0.0",
-  "engines": {
-    "node": ">=20.9.0 <24"
-  },
-  "type": "module",
+  "packageManager": "npm@11.6.2",
+  "workspaces": [
+    "ui",
+    "cms"
+  ],
   "scripts": {
-    "dev": "next dev --turbopack",
-    "dev:webpack": "next dev",
-    "dev:3001": "next dev --turbopack -p 3001",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "^15.4.7",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "dev": "npm run dev:ui+cms",
+    "dev:all": "turbo run dev --parallel",
+    "dev:ui": "turbo run dev --filter=@eumero/ui",
+    "dev:cms": "turbo run dev --filter=@eumero/studio",
+    "dev:ui+cms": "turbo run dev --parallel --filter=@eumero/ui --filter=@eumero/studio",
+    "dev:webpack": "npm run dev:webpack --workspace @eumero/ui",
+    "dev:3001": "npm run dev:3001 --workspace @eumero/ui",
+    "dev:studio": "npm run dev --workspace @eumero/studio",
+    "build": "npm run build --workspace @eumero/ui",
+    "build:studio": "npm run build --workspace @eumero/studio",
+    "start": "npm run start --workspace @eumero/ui",
+    "lint": "npm run lint --workspace @eumero/ui",
+    "lint:studio": "npm run lint --workspace @eumero/studio",
+    "build:all": "turbo run build",
+    "lint:all": "turbo run lint"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.17",
-    "@types/node": "^22.19.0",
-    "@types/react": "^19.2.5",
-    "@types/react-dom": "^19.2.3",
-    "autoprefixer": "^10.4.22",
-    "eslint": "^9.39.1",
-    "eslint-config-next": "^15.4.7",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.17",
-    "typescript": "^5.9.2"
+    "turbo": "^2.5.8"
   }
 }
