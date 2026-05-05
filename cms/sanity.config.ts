@@ -2,7 +2,7 @@ import {visionTool} from '@sanity/vision'
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 
-import {apiVersion, dataset, projectId} from '../ui/src/sanity/env'
+import {apiVersion, dataset, projectId} from './studioEnv'
 import {schema} from '../ui/src/sanity/schemaTypes'
 import {structure} from '../ui/src/sanity/structure'
 
